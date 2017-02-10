@@ -1,6 +1,7 @@
 /*.tgz
 db.sqlite3
 venv
+climaenv
 migrations
 media
 *.pyc
