@@ -2,7 +2,11 @@
 <head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Clima Aristotehniki</title>
+		{% if LANGUAGE_CODE == 'el' %}
+		<title>Κλιμα Αριστοτεχνική - Θ. Ρεμουνδος</title>
+		{% else %}
+		<title>Clima Aristotehniki - Th. Remoundos</title>
+		{% endif %}
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		{% load staticfiles %}
@@ -86,8 +90,16 @@
 		    </div>
 		    <nav id="mainmenu" class="mainmenu">
 					<ul>
-						<li class="logo-wrapper"><a href="index.html">
-							<img class="clima-logo" src="{% static 'img/logo.png' %}" 										alt="Multipurpose Twitter Bootstrap Template"></a>
+						<li class="logo-wrapper">
+							{% if LANGUAGE_CODE == 'el' %}
+							<a href="/">
+								<img class="clima-logo" src="{% static 'img/logo.png' %}" alt="Κλιμα Αριστοτεχνική - Θ. Ρεμουνδος">
+							</a>
+							{% else %}
+							<a href="/en/">
+								<img class="clima-logo" src="{% static 'img/logo.png' %}" alt="Clima Aristotehniki - Th. Remoundos">
+							</a>
+							{% endif %}
 						</li>
 						{% if LANGUAGE_CODE == 'el' %}
 						<li class="active">
