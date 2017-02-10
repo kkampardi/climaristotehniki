@@ -189,12 +189,24 @@
 				</div>
 
 				<div class="col-footer col-md-4 col-xs-6">
-					<h3>Contacts</h3>
 					<p class="contact-us-details">
-							<b>Address:</b> 123 Fake Street, LN1 2ST, London, United Kingdom<br/>
-							<b>Phone:</b> +44 123 654321<br/>
-							<b>Fax:</b> +44 123 654321<br/>
-							<b>Email:</b> <a href="mailto:getintoutch@yourcompanydomain.com">getintoutch@yourcompanydomain.com</a>
+						{% if LANGUAGE_CODE == 'en' %}
+						<h3>Contacts</h3>
+							<b>Company Name:</b> Remoudos Theodors Company <br/>
+							<b>Address:</b> DERVENAKION 9, 18122, <br/>
+							<b>Phone:</b> +30 2104944519 <br/>
+							<b>Mobile Phone:</b> 6944783925 <br/>
+							<b>Fax:</b>  +30 2104944519 <br/>
+							<b>Email:</b>  <a href="mailto:getintoutch@yourcompanydomain.com">clima_aristotehniki@yahoo.gr </a>
+						{% else %}
+						<h3>Στοιχεία επικοινωνίας</h3>
+							<b>Επωνυμία:</b> ΡΕΜΟΥΝΔΟΣ ΘΕΟΔΩΡΟΣ Ε.Ε. <br/>
+							<b>Διεύθυνση:</b> ΔΕΡΒΕΝΑΚΙΩΝ 9, ΚΟΡΥΔΑΛΛΟΣ <br/>
+							<b>Τηλέφωνο:</b> 2104944519 <br/>
+							<b>Κινητό Τηλέφωνο:</b> 6944783925 <br/>
+							<b>Fax:</b>  2104944519 <br/>
+							<b>Email:</b>  <a href="mailto:getintoutch@yourcompanydomain.com">clima_aristotehniki@yahoo.gr </a>
+						{% endif %}
 						</p>
 				</div>
 				<div class="col-footer col-md-2 col-xs-6">
