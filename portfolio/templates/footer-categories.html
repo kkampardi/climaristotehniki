@@ -1,0 +1,13 @@
+<h3>Τα Προιοντα Μας</h3>
+<ul class="no-list-style">
+  {% for category in categories %}
+  {% if category.products.all %}
+  <li><a href="#" class=""></a>
+    <a href="{% url 'productlist_by_category' category_slug=category.slug %}">
+    {{ category.name }}
+    </a>
+  </li>
+  {% endif %}
+  {% endfor %}
+
+</ul>

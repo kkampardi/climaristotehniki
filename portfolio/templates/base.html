@@ -177,15 +177,28 @@
 				</div>
 				</div>
 				<div class="col-footer col-md-3 col-xs-6">
+					{% if LANGUAGE_CODE == 'el' %}
+					<h3>Χαρτης</h3>
+					<ul class="no-list-style footer-navigate-section">
+						<li><a href="{% url 'home' %}">Αρχική</a></li>
+						<li>	<a href="#">Υπηρεσίες</a></li>
+						<li><a href="{% url 'portfolio_list' %}">Εργα</a></li>
+						<li><a href="{% url 'category_list' %}">Προιόντα</a></li>
+						<li><a href="{% url 'faq' %}">FAQ</a></li>
+						<li><a href="{% url 'contact' %}">Επικοινωνία</a></li>
+					</ul>
+						{% else %}
 					<h3>Navigate</h3>
 					<ul class="no-list-style footer-navigate-section">
-						<li><a href="page-blog-posts.html">Blog</a></li>
-						<li><a href="page-portfolio-3-columns-2.html">Portfolio</a></li>
-						<li><a href="page-products-3-columns.html">eShop</a></li>
-						<li><a href="page-services-3-columns.html">Services</a></li>
-						<li><a href="page-pricing.html">Pricing</a></li>
-						<li><a href="page-faq.html">FAQ</a></li>
-					</ul>
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li>	<a href="#">Services</a></li>
+						<li><a href="{% url 'portfolio_list' %}">Work</a></li>
+						<li><a href="{% url 'category_list' %}">Products</a></li>
+						<li><a href="{% url 'faq' %}">FAQ</a></li>
+						<li><a href="{% url 'contact' %}">Contact</a></li>
+					<ul>
+						{% endif %}
+
 				</div>
 
 				<div class="col-footer col-md-4 col-xs-6">
@@ -210,12 +223,7 @@
 						</p>
 				</div>
 				<div class="col-footer col-md-2 col-xs-6">
-					<h3>Stay Connected</h3>
-					<ul class="footer-stay-connected no-list-style">
-						<li><a href="#" class="facebook"></a></li>
-						<li><a href="#" class="twitter"></a></li>
-						<li><a href="#" class="googleplus"></a></li>
-					</ul>
+					{% category_list pages_tags  %}
 				</div>
 			</div>
 			<div class="row">
