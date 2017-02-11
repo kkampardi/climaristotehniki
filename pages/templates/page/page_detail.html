@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-
+<div class="section section-breadcrumbs">
+<div class="container">
+ <div class="row">
+   <div class="col-md-12">
+      <h1>Υπηρεσίες </h1>
+   </div>
+ </div>
+</div>
+</div>
 <div class="section section-white">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h3>{{page.title}}</h3>
+        <h2>{{page.title}}</h2>
         <p>
-        {{page.body}}
+        {{page.body|safe}}
         </p>
       </div>
       <div class="col-md-6">
@@ -16,8 +24,21 @@
           <img src="/media/{{page.image}}" alt="{{page.title}}">
         </div>
       </div>
+      </div>
+  </div>
+</div>
+<!-- Press Coverage -->
+<!-- Call to Action Bar -->
+<div class="section section-white">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="calltoaction-wrapper">
+        <h3>Ολοκληρωμένες λύσεις Ψύξης, Κλιματισμού, Θέρμανσης</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Επικοινωνήστε μαζι μας</a>
+      </div>
     </div>
   </div>
 </div>
-
+</div>
+<!-- End Call to Action Bar -->
 {% endblock content %}
