@@ -9,9 +9,7 @@ staticfiles
 .DS_STORE
 *.zip
 *.csv
-*.png
-*.jpeg
-*.jpg
+
 .env*
 settings_local.py
 settings_production.py
