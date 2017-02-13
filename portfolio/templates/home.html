@@ -17,6 +17,42 @@
 		</div>
   </div>
   <!-- End Homepage Slider -->
+  <!-- Press Coverage -->
+  <!-- Call to Action Bar -->
+  <div class="section section-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="calltoaction-wrapper">
+          <h3>Ολοκληρωμένες λύσεις Ψύξης, Κλιματισμού, Θέρμανσης</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Επικοινωνήστε μαζι μας</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- End Call to Action Bar -->
+  <!-- Press Coverage -->
+    <div class="section">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        <div class="in-press press-wired">
+          <a href="#">Τα κλιματιστικά οικιακού τύπου της Toshiba: κομψoς σχεδιασμός, αθόρυβη λειτουργία, ποιότητα εσωτερικού αέρα, εξοικονόμηση ενέργειας, εύκολη εγκατάσταση</a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="in-press press-mashable">
+          <a href="#">Σας παρέχουμε λύσεις οικιακών και επαγγελαμτικών εφαρμογών, κεντρικού και ημικεντρικού κλιματισμού.</a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="in-press press-techcrunch">
+          <a href="#">Βρισκόμαστε κοντά σας για να εγκαταστήσουμε το σύστημα θέρμανσης που σας ταιριάζει σύμφωνα με τις ανάγκες σας.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
   <!-- Services -->
     <div class="section">
       <div class="container">
@@ -49,20 +85,7 @@
       </div>
   </div>
   <!-- End Services -->
-  <!-- Press Coverage -->
-  <!-- Call to Action Bar -->
-  <div class="section section-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="calltoaction-wrapper">
-          <h3>Ολοκληρωμένες λύσεις Ψύξης, Κλιματισμού, Θέρμανσης</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Επικοινωνήστε μαζι μας</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <!-- End Call to Action Bar -->
+
   <!-- Products Slider -->
   <div class="eshop-section section">
 	    	<div class="container">
@@ -74,27 +97,20 @@
 						<div class="shop-item">
 							<!-- Product Image -->
 							<div class="shop-item-image">
-								<a href="page-product-details.html"><img src="img/product1.jpg" alt="Item Name"></a>
+								<a href="#"><img src="/media/{{product.image}}" alt="{{ product.name }}"></a>
 							</div>
 							<!-- Product Title -->
 							<div class="title">
-								<h3><a href="page-product-details.html">Lorem ipsum dolor</a></h3>
+								<h3><a href="page-product-details.html">{{ product.name }}</a></h3>
 							</div>
-							<!-- Product Available Colors-->
-							<div class="colors">
-								<span class="color-white"></span>
-								<span class="color-black"></span>
-								<span class="color-blue"></span>
-								<span class="color-orange"></span>
-								<span class="color-green"></span>
-							</div>
+
 							<!-- Product Price-->
 							<div class="price">
-								$999.99
+								{{ product.short_description}}
 							</div>
 							<!-- Add to Cart Button -->
 							<div class="actions">
-								<a href="page-product-details.html" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i> Add to Cart</a>
+								<a href="page-product-details.html" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i> Read More</a>
 							</div>
 						</div>
 						<!-- End Product -->
@@ -106,28 +122,6 @@
 
 
   <!-- end products slider -->
-<!-- Press Coverage -->
-  <div class="section">
-  <div class="container">
-  <div class="row">
-    <div class="col-md-4 col-sm-6">
-      <div class="in-press press-wired">
-        <a href="#">Τα κλιματιστικά οικιακού τύπου της Toshiba: κομψoς σχεδιασμός, αθόρυβη λειτουργία, ποιότητα εσωτερικού αέρα, εξοικονόμηση ενέργειας, εύκολη εγκατάσταση</a>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="in-press press-mashable">
-        <a href="#">Σας παρέχουμε λύσεις οικιακών και επαγγελαμτικών εφαρμογών, κεντρικού και ημικεντρικού κλιματισμού.</a>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="in-press press-techcrunch">
-        <a href="#">Βρισκόμαστε κοντά σας για να εγκαταστήσουμε το σύστημα θέρμανσης που σας ταιριάζει σύμφωνα με τις ανάγκες σας.</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 <div class="section">
 	    	<div class="container">
 	    		<h2>Our Work</h2>

@@ -1,5 +1,6 @@
 
 from portfolio.models import Project
+from products.models import Product
 
 def show_fp_projects(request):
     fp_projects = Project.objects.all()[:3]
@@ -8,3 +9,9 @@ def show_fp_projects(request):
         'fp_projects': fp_projects,
         'latest_project': latest_project,
         }
+
+def show_fp_products(request):
+    fp_products = Product.objects.all()[:4]
+    return {
+        'fp_products': fp_products,
+    }
