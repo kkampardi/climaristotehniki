@@ -32,7 +32,7 @@
                  <ul>
                    <li class="portfolio-project-name">{{project.name}}</li>
                    <li>{{project.short_description}}</li>
-                   <li>Πελάτης</li>
+                   <li><b>{{ project.client}}</b></li>
                    <li class="read-more"><a href="{% url 'portfolio_detail' pk=project.pk %}" class="btn">Περισσότερες Πληροφορίες</a></li>
                  </ul>
                </div>
@@ -45,11 +45,11 @@
                  <a href="{% url 'portfolio_detail' pk=project.pk %}"><img src="/media/{{project.image}}"
                    alt="{{project.name}}"></a>
                </div>
-               <div class="portfolio-info-fade">
+               <div class="portfolio-info">
                  <ul>
                    <li class="portfolio-project-name">{{project.name_en}}</li>
                    <li>{{project.short_description_en}}</li>
-                   <li>Project Client</li>
+                   <li><b>{{ project.client }}</b></li>
                    <li class="read-more"><a href="{% url 'portfolio_detail' pk=project.pk %}" class="btn">Read more</a></li>
                  </ul>
                </div>

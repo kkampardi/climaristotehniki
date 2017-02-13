@@ -13,6 +13,7 @@ class Project(models.Model):
     short_description_en = models.CharField(max_length=200, blank=True)
     description = RichTextField()
     description_en = RichTextField()
+    client = models.CharField(max_length=200)
     start_date = models.DateField(blank=True, null=True)
     image = models.ImageField(upload_to='portfolio')
 

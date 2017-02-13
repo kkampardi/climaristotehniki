@@ -6,7 +6,7 @@ from .models import Project, ProjectImage, Category
 
 class ProjectAdmin(admin.ModelAdmin):
     model = Project
-    list_display = ('name', 'short_description', 'start_date',)
+    list_display = ('name', 'short_description', 'client', 'start_date',)
     prepopulated_fields = {'slug': ('name',)}
 
 
