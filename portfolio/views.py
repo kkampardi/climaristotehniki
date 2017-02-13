@@ -6,8 +6,7 @@ from .models import Project, Category
 
 
 def home(request):
-    output = _("Welcome to my site.")
-    return render(request, 'home.html', {'output': output})
+    return render(request, 'home.html', {})
 
 
 def about(request):

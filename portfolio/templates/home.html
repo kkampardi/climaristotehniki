@@ -63,7 +63,49 @@
   </div>
   </div>
   <!-- End Call to Action Bar -->
+  <!-- Products Slider -->
+  <div class="eshop-section section">
+	    	<div class="container">
+				<div class="row">
+          <h2>Our Products</h2>
+          {% for product in fp_products %}
+					<div class="col-md-3 col-sm-6">
+						<!-- Product -->
+						<div class="shop-item">
+							<!-- Product Image -->
+							<div class="shop-item-image">
+								<a href="page-product-details.html"><img src="img/product1.jpg" alt="Item Name"></a>
+							</div>
+							<!-- Product Title -->
+							<div class="title">
+								<h3><a href="page-product-details.html">Lorem ipsum dolor</a></h3>
+							</div>
+							<!-- Product Available Colors-->
+							<div class="colors">
+								<span class="color-white"></span>
+								<span class="color-black"></span>
+								<span class="color-blue"></span>
+								<span class="color-orange"></span>
+								<span class="color-green"></span>
+							</div>
+							<!-- Product Price-->
+							<div class="price">
+								$999.99
+							</div>
+							<!-- Add to Cart Button -->
+							<div class="actions">
+								<a href="page-product-details.html" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i> Add to Cart</a>
+							</div>
+						</div>
+						<!-- End Product -->
+					</div>
+          {% endfor %}
+        </div>
+			</div>
+	    </div>
 
+
+  <!-- end products slider -->
 <!-- Press Coverage -->
   <div class="section">
   <div class="container">
@@ -86,6 +128,30 @@
   </div>
 </div>
 </div>
+<div class="section">
+	    	<div class="container">
+	    		<h2>Our Work</h2>
+				<div class="row">
+          {% for project in fp_projects %}
+					<div class="col-md-4 col-sm-6">
+						<div class="portfolio-item">
+							<div class="portfolio-image">
+								<a href="page-portfolio-item.html"><img src="/media/{{ project.image }}" alt="{{ project.name  }}"></a>
+							</div>
+							<div class="portfolio-info-fade">
+								<ul>
+									<li class="portfolio-project-name">{{ project.name}}</li>
+									<li>{{ project.short_description}}</li>
+									<li>{{ project.client }}</li>
+									<li class="read-more"><a href="{% url 'portfolio_detail' pk=project.pk %}" class="btn">Read more</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+          {% endfor %}
+		    </div>
+			</div>
+		</div>
 <!-- Our Clients -->
 <div class="section">
   <div class="container">

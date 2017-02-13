@@ -157,6 +157,10 @@ a:hover {
   box-shadow: 0 0 8px #999;
   color: 0 0 8px #999;
 }
+
+.service-wrapper-row .portfolio-item{
+  background-color: transparent;
+}
 /*--------------------------------------------------------------------------
 +	Pricing Table Style
 --------------------------------------------------------------------------*/
@@ -1384,7 +1388,7 @@ span.color-red {
   right: 20px;
   width: 120px;
   height: 32px;
-  background-image: url(../img/in-press.png);
+  /*background-image: url(../img/in-press.png);*/
   background-repeat: no-repeat;
   -webkit-transition: .25s linear;
   -moz-transition: .25s linear;
@@ -1905,19 +1909,19 @@ span.color-red {
   background-image: url(../img/homepage-slider/slider-bg1.jpg);
 }
 #sequence > .sequence-canvas > li.bg2 {
-  background-image: url(../img/homepage-slider/slider-bg2.jpg);
-}
-#sequence > .sequence-canvas > li.bg3 {
   background-image: url(../img/homepage-slider/slider-bg3.jpg);
 }
+#sequence > .sequence-canvas > li.bg3 {
+  background-image: url(../img/homepage-slider/slider-bg2.jpg);
+}
 #sequence > .sequence-canvas > li.bg4 {
-  background-image: url(../img/homepage-slider/slider-bg4.jpg);
+  background-image: url(../img/homepage-slider/red.jpg);
 }
 #sequence > .sequence-canvas > li.bg5 {
-  background-image: url(../img/homepage-slider/slider-bg5.jpg);
+  background-image: url(../img/homepage-slider/brown.jpg);
 }
 #sequence > .sequence-canvas > li.bg6 {
-  background-image: url(../img/homepage-slider/slider-bg6.jpg);
+  background-image: url(../img/homepage-slider/.jpg);
 }
 #sequence > .sequence-canvas > li.bg7 {
   background-image: url(../img/homepage-slider/slider-bg7.jpg);
@@ -2013,7 +2017,7 @@ span.color-red {
   height: 14px;
   margin: 0 4px;
   text-indent: -999em;
-  border: 4px solid #4f8db3;
+  border: 4px solid ;
   cursor: pointer;
   -webkit-border-radius: 30px;
   -webkit-background-clip: padding-box;
@@ -2031,7 +2035,7 @@ span.color-red {
   transition: background .5s, opacity .5s;
 }
 .sequence-pagination li.current {
-  background: #4f8db3;
+  background: #fff;
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
