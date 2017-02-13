@@ -17,42 +17,7 @@
 		</div>
   </div>
   <!-- End Homepage Slider -->
-  <!-- Press Coverage -->
-  <!-- Call to Action Bar -->
-  <div class="section section-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="calltoaction-wrapper">
-          <h3>Ολοκληρωμένες λύσεις Ψύξης, Κλιματισμού, Θέρμανσης</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Επικοινωνήστε μαζι μας</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <!-- End Call to Action Bar -->
-  <!-- Press Coverage -->
-    <div class="section">
-    <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-6">
-        <div class="in-press press-wired">
-          <a href="#">Τα κλιματιστικά οικιακού τύπου της Toshiba: κομψoς σχεδιασμός, αθόρυβη λειτουργία, ποιότητα εσωτερικού αέρα, εξοικονόμηση ενέργειας, εύκολη εγκατάσταση</a>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="in-press press-mashable">
-          <a href="#">Σας παρέχουμε λύσεις οικιακών και επαγγελαμτικών εφαρμογών, κεντρικού και ημικεντρικού κλιματισμού.</a>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="in-press press-techcrunch">
-          <a href="#">Βρισκόμαστε κοντά σας για να εγκαταστήσουμε το σύστημα θέρμανσης που σας ταιριάζει σύμφωνα με τις ανάγκες σας.</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
+
   <!-- Services -->
     <div class="section">
       <div class="container">
@@ -85,7 +50,68 @@
       </div>
   </div>
   <!-- End Services -->
+  <!-- Call to Action Bar -->
+  <div class="section section-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="calltoaction-wrapper">
+          <h3>Ολοκληρωμένες λύσεις Ψύξης, Κλιματισμού, Θέρμανσης</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Επικοινωνήστε μαζι μας</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- End Call to Action Bar -->
+<!-- Work section -->
+<div class="section">
+	    	<div class="container">
+	    		<h2>Our Work</h2>
+				<div class="row">
+          {% for project in fp_projects %}
+					<div class="col-md-4 col-sm-6">
+						<div class="portfolio-item">
+							<div class="portfolio-image">
+								<a href="page-portfolio-item.html"><img src="/media/{{ project.image }}" alt="{{ project.name  }}"></a>
+							</div>
+							<div class="portfolio-info-fade">
+								<ul>
+									<li class="portfolio-project-name">{{ project.name}}</li>
+									<li>{{ project.short_description}}</li>
+									<li>{{ project.client }}</li>
+									<li class="read-more"><a href="{% url 'portfolio_detail' pk=project.pk %}" class="btn">Read more</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+          {% endfor %}
+		    </div>
+			</div>
+		</div>
+    <!-- Press Coverage -->
 
+    <!-- Press Coverage -->
+      <div class="section section-white">
+      <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="in-press press-wired">
+            <a href="#">Τα κλιματιστικά οικιακού τύπου της Toshiba: κομψoς σχεδιασμός, αθόρυβη λειτουργία, ποιότητα εσωτερικού αέρα, εξοικονόμηση ενέργειας, εύκολη εγκατάσταση</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="in-press press-mashable">
+            <a href="#">Σας παρέχουμε λύσεις οικιακών και επαγγελαμτικών εφαρμογών, κεντρικού και ημικεντρικού κλιματισμού.</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="in-press press-techcrunch">
+            <a href="#">Βρισκόμαστε κοντά σας για να εγκαταστήσουμε το σύστημα θέρμανσης που σας ταιριάζει σύμφωνα με τις ανάγκες σας.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   <!-- Products Slider -->
   <div class="eshop-section section">
 	    	<div class="container">
@@ -119,33 +145,7 @@
         </div>
 			</div>
 	    </div>
-
-
   <!-- end products slider -->
-<div class="section">
-	    	<div class="container">
-	    		<h2>Our Work</h2>
-				<div class="row">
-          {% for project in fp_projects %}
-					<div class="col-md-4 col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="/media/{{ project.image }}" alt="{{ project.name  }}"></a>
-							</div>
-							<div class="portfolio-info-fade">
-								<ul>
-									<li class="portfolio-project-name">{{ project.name}}</li>
-									<li>{{ project.short_description}}</li>
-									<li>{{ project.client }}</li>
-									<li class="read-more"><a href="{% url 'portfolio_detail' pk=project.pk %}" class="btn">Read more</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-          {% endfor %}
-		    </div>
-			</div>
-		</div>
 <!-- Our Clients -->
 <div class="section">
   <div class="container">
@@ -157,4 +157,5 @@
 </div>
 </div>
 <!-- End Our Clients -->
+
 {% endblock content %}

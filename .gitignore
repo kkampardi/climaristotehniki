@@ -74,3 +74,4 @@ docs/_build/
 target/
 
 portfolioapp/urls.py
+/static/
