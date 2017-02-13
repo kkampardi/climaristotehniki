@@ -4,9 +4,17 @@
 {% block content %}
 <!-- Homepage Slider -->
   <div class="homepage-slider">
-    <div id="sequence">
-      {% show_slides pages_tags  %}
-    </div>
+    	<div id="sequence">
+{% show_slides pages_tags %}
+				<div class="sequence-pagination-wrapper">
+					<ul class="sequence-pagination">
+						<li>1</li>
+						<li>2</li>
+            <li>3</li>
+						<!--li>3</li-->
+					</ul>
+				</div>
+		</div>
   </div>
   <!-- End Homepage Slider -->
   <!-- Services -->
