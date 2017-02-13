@@ -157,6 +157,10 @@ a:hover {
   box-shadow: 0 0 8px #999;
   color: 0 0 8px #999;
 }
+
+.service-wrapper-row .portfolio-item{
+  background-color: transparent;
+}
 /*--------------------------------------------------------------------------
 +	Pricing Table Style
 --------------------------------------------------------------------------*/

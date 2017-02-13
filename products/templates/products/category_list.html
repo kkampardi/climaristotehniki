@@ -22,10 +22,12 @@
     {% if category.products.all %}
       <div class="row service-wrapper-row">
         <div class="col-sm-4">
-          <div class="service-image">
-            <a href="{% url 'productlist_by_category' category_slug=category.slug %}">
-              <img src="/media/{{category.image}}" alt="gfdgfgdfgdfg">
-            </a>
+          <div class="portfolio-item">
+            <div class="portfolio-image">
+              <a href="{% url 'productlist_by_category' category_slug=category.slug %}">
+                <img src="/media/{{category.image}}" alt="gfdgfgdfgdfg">
+              </a>
+            </div>
           </div>
         </div>
         <div class="col-sm-8">
@@ -43,7 +45,6 @@
           </p>
         {% endif %}
       </div>
-
   </div>
   {% endif %}
   {% endfor %}
