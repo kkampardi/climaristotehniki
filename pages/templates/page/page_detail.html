@@ -10,7 +10,7 @@
  </div>
 </div>
 </div>
-<div class="section section-white">
+<div class="section">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -19,12 +19,16 @@
         {{page.body|safe}}
         </p>
       </div>
-      <div class="col-md-6">
-        <div class="video-wrapper">
-          <img src="/media/{{page.image}}" alt="{{page.title}}">
-        </div>
+      <div class="col-md-6" style="padding-top: 80px;">
+        <div class="portfolio-item">
+              <div class="portfolio-image">
+                <a href="#">
+                  <img src="/media/{{ page.image }}" alt="{{page.title}}">
+                </a>
+              </div>
+          </div>
       </div>
-      </div>
+    </div>
   </div>
 </div>
 <!-- Press Coverage -->
