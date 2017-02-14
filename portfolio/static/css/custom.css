@@ -27,6 +27,7 @@
 
     /* Float the list items side by side */
     ul.topnav li {float: left;}
+    ul.services li{float: none;}
 
     /* Style the links inside the list items */
     ul.topnav li a {
@@ -39,7 +40,7 @@
     }
 
     /* Change background color of links on hover */
-    ul.topnav li a:hover {background-color: #555; color:#fff;}
+    ul.topnav li a:hover, ul.topnav li:hover {background-color: #555; color:#fff;}
 
     /* Hide the list item that contains the link that should open and close the topnav on small screens */
     ul.topnav li.icon {display: none;}
