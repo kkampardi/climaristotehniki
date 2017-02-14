@@ -12,10 +12,11 @@
         max-width: 225px;
       }
 
-  ul.topnav li.logo-wrapper a:hover, ul.topnav li.icon a:hover{
+  ul.topnav li.logo-wrapper a:hover, ul.topnav li a:hover{
     background-color: #fff;
     color: #555
   }
+
     /**** custom navi ********/
     /* Remove margins and padding from the list, and add a black background color */
     ul.topnav {
@@ -51,6 +52,7 @@
      ul.topnav li.icon {
        float: right;
        display: inline-block;
+       background-color: transparent;
      }
     }
 
@@ -61,6 +63,7 @@
        position: absolute;
        right: 0;
        top: 0;
+       background-color: transparent;
      }
      ul.topnav.responsive li {
        float: none;
