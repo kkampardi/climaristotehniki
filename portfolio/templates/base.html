@@ -101,8 +101,9 @@
 							{% endif %}
 						</li>
 						{% if LANGUAGE_CODE == 'el' %}
-						<li class="active">
-							<a href="{% url 'home' %}">Εταιρία</a>
+						{% url 'home' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="{{ url }}">Εταιρία</a>
 						</li>
 						<li class="has-submenu">
 							<a href="#">Υπηρεσίες</a>
@@ -114,17 +115,21 @@
 								</div>
 							</div>
 						</li>
-						<li>
-							<a href="{% url 'portfolio_list' %}">Εργα</a>
+						{% url 'portfolio_list' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="{{ url }}">Εργα</a>
 						</li>
-						<li>
-							<a href="{% url 'category_list' %}">Προιόντα</a>
+						{% url 'category_list' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="{{ url }}">Προιόντα</a>
 						</li>
-						<li>
-							<a href="{% url 'faq' %}">FAQ</a>
+						{% url 'faq' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="/en/{{ url }}">FAQ</a>
 						</li>
-						<li>
-							<a href="{% url 'contact' %}">Επικοινωνία</a>
+						{% url 'contact' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="{{ url }}">Επικοινωνία</a>
 						</li>
 						<li class="icon">
 							<!--a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a-->
@@ -135,8 +140,9 @@
 							</div>
 						</li>
 						{% else %}
-						<li class="active">
-							<a href="{% url 'home' %}">Company</a>
+						{% url 'home' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="/en/{{ url }}">Company</a>
 						</li>
 						<li class="has-submenu">
 							<a href="#">Services</a>
@@ -149,17 +155,21 @@
 								</div>
 							</div>
 						</li>
-						<li>
-							<a href="{% url 'portfolio_list' %}">Works</a>
+						{% url 'portfolio_list' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="{{ url }}">Works</a>
 						</li>
-						<li>
-							<a href="{% url 'category_list' %}">Products</a>
+						{% url 'category_list' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="{{ url }}">Products</a>
 						</li>
-						<li>
-							<a href="{% url 'faq' %}">FAQ</a>
+						{% url 'faq' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="{{ url }}">FAQ</a>
 						</li>
-						<li>
-							<a href="{% url 'contact' %}">Contact</a>
+						{% url 'contact' as url %}
+						<li {% if request.get_full_path == url%}class="active"{% endif %}>
+							<a href="{{ url }}">Contact</a>
 						</li>
 						{% endif %}
 					</ul>
