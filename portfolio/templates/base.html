@@ -125,7 +125,7 @@
 						</li>
 						{% url 'faq' as url %}
 						<li {% if request.get_full_path == url%}class="active"{% endif %}>
-							<a href="/en/{{ url }}">FAQ</a>
+							<a href="{{ url }}">FAQ</a>
 						</li>
 						{% url 'contact' as url %}
 						<li {% if request.get_full_path == url%}class="active"{% endif %}>
