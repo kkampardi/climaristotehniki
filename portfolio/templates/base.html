@@ -142,14 +142,13 @@
 						{% else %}
 						{% url 'home' as url %}
 						<li {% if request.get_full_path == url%}class="active"{% endif %}>
-							<a href="/en/{{ url }}">Company</a>
+							<a href="{{ url }}">Company</a>
 						</li>
 						<li class="has-submenu">
 							<a href="#">Services</a>
 							<div class="mainmenu-submenu">
 								<div class="mainmenu-submenu-inner">
 									<div>
-										<h4>Services</h4>
 										{% show_pages_menu pages_menu %}
 									</div>
 								</div>
@@ -170,6 +169,14 @@
 						{% url 'contact' as url %}
 						<li {% if request.get_full_path == url%}class="active"{% endif %}>
 							<a href="{{ url }}">Contact</a>
+						</li>
+						<li class="icon">
+							<!--a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a-->
+							<div class="container" onclick="myFunction(this)">
+							 <div class="bar1"></div>
+							 <div class="bar2"></div>
+							 <div class="bar3"></div>
+							</div>
 						</li>
 						{% endif %}
 					</ul>
