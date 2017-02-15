@@ -755,7 +755,8 @@ a:hover {
   max-width: 100%;
 }
 .shop-item .image {
-  text-align: center;
+    text-align: center;
+    max-height: 130px;
 }
 .shop-item .title {
   padding: 20px 0 10px;
