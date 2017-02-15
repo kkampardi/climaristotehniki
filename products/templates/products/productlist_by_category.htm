@@ -52,7 +52,7 @@
         <div class="col-sm-4">
           <div class="shop-item">
             <div class="image">
-              <a href="{% url 'product_detail' pk=product.pk %}"><img src="/media/{{product.image}}" alt="{{product.name_en}}"></a>
+              <a href="{% url 'product_detail' slug=product.slug %}"><img src="/media/{{product.image}}" alt="{{product.name_en}}"></a>
             </div>
             <div class="title">
               <h3><a href="#">{{product.name_en}}</a></h3>
@@ -61,7 +61,7 @@
               {{product.short_description_en|safe}}
             </div>
             <div class="actions">
-              <a href="{% url 'product_detail' pk=product.pk %}" class="btn"><i class="icon-shopping-cart icon-white"></i>View Details</a>
+              <a href="{% url 'product_detail' slug=product.slug %}" class="btn"><i class="icon-shopping-cart icon-white"></i>View Details</a>
             </div>
           </div>
         </div>

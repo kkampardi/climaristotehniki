@@ -23,10 +23,10 @@ class Category(models.Model):
         verbose_name = "category"
         verbose_name_plural = "categories"
 
-    def __unicode__(self):
-        return self.name
+    def get_absolute_url(self):
+        return reverse('category_list',args=[self.slug])
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
 class Product(models.Model):
@@ -45,8 +45,8 @@ class Product(models.Model):
         ordering = ('name',)
         index_together = (('id', 'slug'),)
 
-    def __unicode__(self):
-        return self.name
+    def get_absolute_url(self):
+        return reverse('product_detail', args[self.slug])
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name

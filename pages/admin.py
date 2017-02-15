@@ -14,7 +14,7 @@ class FaqAdmin(admin.ModelAdmin):
 class PageAdmin(admin.ModelAdmin):
     model = Page
     list_display = ('title', 'slug', 'status', 'created', 'updated')
-    prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {'slug': ('title_en',)}
 
 class  CategoryAdmin(admin.ModelAdmin):
     model = Category

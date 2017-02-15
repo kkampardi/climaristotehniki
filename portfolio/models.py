@@ -21,14 +21,14 @@ class Project(models.Model):
     class Meta:
         ordering = ['-start_date', ]
 
-    def __unicode__(self):
-        return self.name
+    def get_absolute_url(self):
+        return reverse('portfolio_detail',args=[self.slug])
 
     def publish(self):
         self.published_date = timezone.now()
         self.save()
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
 
@@ -70,8 +70,6 @@ class Category(models.Model):
         verbose_name = "category"
         verbose_name_plural = "categories"
 
-    def __unicode__(self):
-        return self.name
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name

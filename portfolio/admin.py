@@ -7,12 +7,12 @@ from .models import Project, ProjectImage, Category
 class ProjectAdmin(admin.ModelAdmin):
     model = Project
     list_display = ('name', 'short_description', 'client', 'start_date',)
-    prepopulated_fields = {'slug': ('name',)}
+    prepopulated_fields = {'slug': ('name_en',)}
 
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug')
-    prepopulated_fields = {'slug': ('name',)}
+    prepopulated_fields = {'slug': ('name_en',)}
 
 
 class ProjectImageAdmin(admin.ModelAdmin):

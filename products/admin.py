@@ -10,12 +10,12 @@ class ProductAdmin(admin.ModelAdmin):
     model = Product
     list_display = ('name', 'slug', 'category', 'created')
     # list_filter = ('created', 'updated')
-    prepopulated_fields = {'slug': ('name',)}
+    prepopulated_fields = {'slug': ('name_en',)}
 
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug')
-    prepopulated_fields = {'slug': ('name',)}
+    prepopulated_fields = {'slug': ('name_en',)}
 
 
 admin.site.register(Product, ProductAdmin)
