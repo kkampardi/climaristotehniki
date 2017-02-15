@@ -34,73 +34,101 @@
       <h3>{{project.name}}</h3>
       {{project.description|safe}}
       <ul class="no-list-style">
-        <li><b>Πελάτης:</b> Some Client LTD</li>
-        <li><b>Ημερομηνία:</b> {{project.start_date}}	</li>
-        <li><b>Τεχνολογίες:</b> HTML5, CSS3, jQuery, PHP, MySQL</li>
-        <li class="portfolio-visit-btn"><a href="#" class="btn">Visit Website</a></li>
+        <li><b>Πελάτης:</b> {{ project.client }}</li>
+        <li><b>Ημερομηνία:</b> {{ project.start_date }}	</li>
       </ul>
       {% else %}
       <h3>{{project.name_en}}</h3>
       {{project.description_en|safe}}
       <ul class="no-list-style">
-        <li><b>Client:</b> Some Client LTD</li>
+        <li><b>Client:</b> {{ project.client_en }}</li>
         <li><b>Date:</b> {{project.start_date}}	</li>
-        <li><b>Technologies:</b> HTML5, CSS3, jQuery, PHP, MySQL</li>
       </ul>
       {% endif %}
     </div>
     <!-- End Project Info Column -->
   </div>
-  <!-- Related Projects -->
-  <h3>Related Projects</h3>
-  <div class="row">
-    <div class="col-md-4 col-sm-6">
-      <div class="portfolio-item">
-        <div class="portfolio-image">
-          <a href="#"><img src="img/portfolio3.jpg" alt="Project Name"></a>
-        </div>
-        <div class="portfolio-info-fade">
-          <ul>
-            <li class="portfolio-project-name">Project Name</li>
-            <li>Website design & Development</li>
-            <li>Client: Some Client LTD</li>
-            <li class="read-more"><a href="#" class="btn">Read more</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="portfolio-item">
-        <div class="portfolio-image">
-          <a href="#"><img src="img/portfolio4.jpg" alt="Project Name"></a>
-        </div>
-        <div class="portfolio-info-fade">
-          <ul>
-            <li class="portfolio-project-name">Project Name</li>
-            <li>Website design & Development</li>
-            <li>Client: Some Client LTD</li>
-            <li class="read-more"><a href="#" class="btn">Read more</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <div class="portfolio-item">
-        <div class="portfolio-image">
-          <a href="#"><img src="img/portfolio6.jpg" alt="Project Name"></a>
-        </div>
-        <div class="portfolio-info-fade">
-          <ul>
-            <li class="portfolio-project-name">Project Name</li>
-            <li>Website design & Development</li>
-            <li>Client: Some Client LTD</li>
-            <li class="read-more"><a href="#" class="btn">Read more</a></li>
-          </ul>
+</div>
+</div>
+<!-- contact bar en -->
+{% if LANGUAGE_CODE == 'el' %}
+
+  <div class="section section-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="calltoaction-wrapper">
+          <h3>Ολοκληρωμένες λύσεις Ψύξης, Κλιματισμού, Θέρμανσης</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Επικοινωνήστε μαζι μας</a>
         </div>
       </div>
     </div>
   </div>
+  </div>
+{% else %}
+<!-- contact bar el -->
+<div class="section section-white">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="calltoaction-wrapper">
+        <h3>For Compact Solutions of Heating and Cooling</h3> <a href="http://climaristotehniki.gr/en/contact/" class="btn btn-orange">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endif %}
+<!-- end contact bar -->
+
+<div class="section">
+<div class="container">
+  {% if LANGUAGE_CODE == 'el' %}
+  <!-- Related Projects gr -->
+  <h3>Σχετικά Εργα</h3>
+  <div class="row">
+    {% for project in fp_projects %}
+    <div class="col-md-4 col-sm-6">
+      <div class="portfolio-item">
+        <div class="portfolio-image">
+          <a href="#"><img src="/media/{{ project.image }}" alt="{{ project.name }}"></a>
+        </div>
+        <div class="portfolio-info-fade">
+          <ul>
+            <li class="portfolio-project-name">{{ project.name }}</li>
+            <li>{{ project.short_description }}</li>
+            <li>{{ project.client }}</li>
+            <li class="read-more"><a href="#" class="btn">Περισσότερα</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- End Related Projects gr -->
+  {% else %}
+  <!-- Related Projects en -->
+  <h3>Related Projects</h3>
+  <div class="row">
+    {% for project in fp_projects %}
+    <div class="col-md-4 col-sm-6">
+      <div class="portfolio-item">
+        <div class="portfolio-image">
+          <a href="#"><img src="/media/{{ project.image }}" alt="{{ project.name_en }}"></a>
+        </div>
+        <div class="portfolio-info-fade">
+          <ul>
+            <li class="portfolio-project-name">{{ project.name_en }}</li>
+            <li>{{ project.short_description_en }}</li>
+            <li>{{ project.client_en }}</li>
+            <li class="read-more"><a href="#" class="btn">Read More</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
   <!-- End Related Projects -->
+  {% endif %}
 </div>
 </div>
 {% endblock content %}
