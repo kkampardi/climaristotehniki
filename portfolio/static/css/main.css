@@ -752,7 +752,7 @@ a:hover {
   color: inset 0 1px #fff,0 0 8px #c8cfe6;
 }
 .shop-item img {
-  max-width: 100%;
+  max-width: 230px;
   max-height: 130px;
 }
 .shop-item .image {
