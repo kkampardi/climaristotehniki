@@ -805,8 +805,9 @@ a:hover {
 .shop-item .description {
   color: #828282;
   font-size: 0.9em;
-  text-align: justify;
+  text-align: center;
   margin: 0 10px;
+  padding: 23px;
 }
 .shop-item .description p {
   border-top: 1px solid #ECECEC;
