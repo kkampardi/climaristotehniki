@@ -199,6 +199,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-footer col-md-3 col-xs-6">
+					{% if LANGUAGE_CODE == 'en'%}
+
 					<h3>Our Latest Work</h3>
 					{% for latest in latest_project %}
 					<div class="portfolio-item">
@@ -207,6 +209,16 @@
 					</div>
 				</div>
 				{% endfor%}
+				{% else %}
+				<h3>Τελευταίο Εργο</h3>
+				{% for latest in latest_project %}
+				<div class="portfolio-item">
+				<div class="portfolio-image">
+					<a href="{% url 'portfolio_detail' pk=latest.pk %}"><img src="/media/{{latest.image}}" alt="{{ latest.name }}"></a>
+				</div>
+			</div>
+			{% endfor%}
+			{% endif %}
 				</div>
 				<div class="col-footer col-md-3 col-xs-6">
 					{% if LANGUAGE_CODE == 'el' %}
