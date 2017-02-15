@@ -753,6 +753,7 @@ a:hover {
 }
 .shop-item img {
   max-width: 100%;
+  max-height: 130px;
 }
 .shop-item .image {
     text-align: center;
