@@ -2,10 +2,25 @@
 {% load staticfiles %}
 {% load pages_tags %}
 {% block content %}
+{% if LANGUAGE_CODE == 'en' %}
 <!-- Homepage Slider -->
   <div class="homepage-slider">
     	<div id="sequence">
-{% show_slides pages_tags %}
+        <ul class="sequence-canvas">
+          <!-- Slide 1 -->
+          {% for slide in slides %}
+          <li class="bg{{ slide.pk }}">
+
+            <!-- Slide Title -->
+            <h2 class="title">{{ slide.title_en }}</h2>
+            <!-- Slide Text -->
+            <h3 class="subtitle">{{ slide.subtitle_en }}</h3>
+            <!-- Slide Image -->
+            <img class="slide-img" src="media/{{ slide.image }}" alt="{{ slide.title_en }}" />
+          </li>
+          {% endfor %}
+          <!-- End Slide 1 -->
+        </ul>
 				<div class="sequence-pagination-wrapper">
 					<ul class="sequence-pagination">
 						<li>1</li>
@@ -16,9 +31,180 @@
 				</div>
 		</div>
   </div>
-  <!-- End Homepage Slider -->
+<!-- End Homepage Slider -->
+<!-- lang en -->
+<!-- Services  -->
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="service-wrapper">
+            <img src="{% static 'img/service-icon/diamond.png' %}" alt="Service 1">
+            <h3>Maintenance</h3>
+            <p>The maintenance of equipment by qualified personnel ensures the smooth operation of the air conditioning.</p>
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="service-wrapper">
+            <img src="{% static 'img/service-icon/ruler.png' %}" alt="Service 2">
+            <h3>Specifications - Installations</h3>
+            <p>One of the conditions for the proper functioning of the air conditioning is even planning the installation.</p>
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="service-wrapper">
+            <img src="{% static 'img/service-icon/box.png' %}" alt="Service 3">
+            <h3>After Sales Service</h3>
+            <p>Air condition service and repairs, upgrades, vents cleaning. Several technical solutions to each of your problem.</p>
+            <a href="#" class="btn">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- End Services -->
+<!-- Call to Action Bar -->
+<div class="section section-white">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="calltoaction-wrapper">
+        <h3>Compact Solutions for Air Conditioning, Cooling & Heating</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Contuct Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- End Call to Action Bar -->
+<!-- Work section -->
+<div class="section">
+      <div class="container">
+        <h2>Our Work</h2>
+      <div class="row">
+        {% for project in fp_projects %}
+        <div class="col-md-4 col-sm-6">
+          <div class="portfolio-item">
+            <div class="portfolio-image">
+              <a href="page-portfolio-item.html"><img src="/media/{{ project.image }}" alt="{{ project.name_en  }}"></a>
+            </div>
+            <div class="portfolio-info-fade">
+              <ul>
+                <li class="portfolio-project-name">{{ project.name_en}}</li>
+                <li>{{ project.short_description_en}}</li>
+                <li>{{ project.client_en }}</li>
+                <li class="read-more"><a href="{% url 'portfolio_detail' pk=project.pk %}" class="btn">Read more</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- Press Coverage -->
 
-  <!-- Services -->
+  <!-- Press Coverage -->
+    <div class="section section-white">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        <div class="in-press press-wired">
+          <a href="#">Air conditioners Toshiba's household type: elegant design, quiet operation, indoor air quality, energy saving, easy installation</a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="in-press press-mashable">
+          <a href="#">We provide household and professional or application solutions, central and semi-central air conditioning.</a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="in-press press-techcrunch">
+          <a href="#">We are near you to install the heating system that suits you according to your needs.</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- Products Slider -->
+<div class="eshop-section section">
+      <div class="container">
+      <div class="row">
+        <h2>Our Products</h2>
+        {% for product in fp_products %}
+        <div class="col-md-3 col-sm-6">
+          <!-- Product -->
+          <div class="shop-item">
+            <!-- Product Image -->
+            <div class="shop-item-image">
+              <a href="#"><img src="/media/{{product.image}}" alt="{{ product.name_en }}"></a>
+            </div>
+            <!-- Product Title -->
+            <div class="title">
+              <h3><a href="page-product-details.html">{{ product.name_en }}</a></h3>
+            </div>
+
+            <!-- Product Price-->
+            <div class="price">
+              {{ product.short_description_en}}
+            </div>
+            <!-- Add to Cart Button -->
+            <div class="actions">
+              <a href="page-product-details.html" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i> Read More</a>
+            </div>
+          </div>
+          <!-- End Product -->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+<!-- end products slider -->
+<!-- Our Clients -->
+<div class="section">
+<div class="container">
+  <h2>Our Clients</h2>
+<div class="clients-logo-wrapper text-center row">
+  <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'img/logos/jumbo-logo.png' %}" alt="Jumbo"></a></div>
+
+</div>
+</div>
+</div>
+<!-- End Our Clients -->
+<!-- end lang en -->
+{% else %}
+<!-- Homepage Slider -->
+  <div class="homepage-slider">
+    	<div id="sequence">
+        <ul class="sequence-canvas">
+          <!-- Slide 1 -->
+          {% for slide in slides %}
+          <li class="bg{{ slide.pk }}">
+
+            <!-- Slide Title -->
+            <h2 class="title">{{ slide.title }}</h2>
+            <!-- Slide Text -->
+            <h3 class="subtitle">{{ slide.subtitle }}</h3>
+            <!-- Slide Image -->
+            <img class="slide-img" src="media/{{ slide.image }}" alt="{{ slide.title }}" />
+          </li>
+          {% endfor %}
+          <!-- End Slide 1 -->
+        </ul>
+				<div class="sequence-pagination-wrapper">
+					<ul class="sequence-pagination">
+						<li>1</li>
+						<li>2</li>
+            <li>3</li>
+						<!--li>3</li-->
+					</ul>
+				</div>
+		</div>
+  </div>
+<!-- End Homepage Slider -->
+<!-- start lang el -->
+  <!-- Services  -->
     <div class="section">
       <div class="container">
         <div class="row">
@@ -27,7 +213,7 @@
               <img src="{% static 'img/service-icon/diamond.png' %}" alt="Service 1">
               <h3>Συντήριση Μηχανημάτων</h3>
               <p>Η συντήρηση των μηχανημάτων από το ειδικευμένο προσωπικό εξασφαλίζει την απρόσκοπτη λειτουργία του κλιματισμού.</p>
-              <a href="#" class="btn">Read more</a>
+              <a href="#" class="btn">Περισσότερα</a>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
@@ -35,7 +221,7 @@
               <img src="{% static 'img/service-icon/ruler.png' %}" alt="Service 2">
               <h3>Μελετες - Εγκαταστάσεις</h3>
               <p>Μία από τις προϋποθέσεις της σωστής λειτουργίας του κλιματισμού είναι ο άρτιος σχεδιασμός της εγκατάστασης.</p>
-              <a href="#" class="btn">Read more</a>
+              <a href="#" class="btn">Περισσότερα</a>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
@@ -43,7 +229,7 @@
               <img src="{% static 'img/service-icon/box.png' %}" alt="Service 3">
               <h3>Υποστήριξη/Service</h3>
               <p>Επισκευές, αναβαθμίσεις, καθαρισμοί αεραγωγών, ανταλλακτικά. Λυσεις προβλημάτων.</p>
-              <a href="#" class="btn">Read more</a>
+              <a href="#" class="btn">Περισσότερα</a>
             </div>
           </div>
         </div>
@@ -56,7 +242,8 @@
     <div class="row">
       <div class="col-md-12">
         <div class="calltoaction-wrapper">
-          <h3>Ολοκληρωμένες λύσεις Ψύξης, Κλιματισμού, Θέρμανσης</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Επικοινωνήστε μαζι μας</a>
+          <h3>Ολοκληρωμένες λύσεις Ψύξης, Κλιματισμού, Θέρμανσης</h3>
+           <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Επικοινωνήστε μαζι μας</a>
         </div>
       </div>
     </div>
@@ -66,7 +253,7 @@
 <!-- Work section -->
 <div class="section">
 	    	<div class="container">
-	    		<h2>Our Work</h2>
+	    		<h2>Εργα</h2>
 				<div class="row">
           {% for project in fp_projects %}
 					<div class="col-md-4 col-sm-6">
@@ -79,7 +266,7 @@
 									<li class="portfolio-project-name">{{ project.name}}</li>
 									<li>{{ project.short_description}}</li>
 									<li>{{ project.client }}</li>
-									<li class="read-more"><a href="{% url 'portfolio_detail' pk=project.pk %}" class="btn">Read more</a></li>
+									<li class="read-more"><a href="{% url 'portfolio_detail' pk=project.pk %}" class="btn">Περισσότερα</a></li>
 								</ul>
 							</div>
 						</div>
@@ -116,7 +303,7 @@
   <div class="eshop-section section">
 	    	<div class="container">
 				<div class="row">
-          <h2>Our Products</h2>
+          <h2>Προιόντα</h2>
           {% for product in fp_products %}
 					<div class="col-md-3 col-sm-6">
 						<!-- Product -->
@@ -136,7 +323,7 @@
 							</div>
 							<!-- Add to Cart Button -->
 							<div class="actions">
-								<a href="page-product-details.html" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i> Read More</a>
+								<a href="page-product-details.html" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i> Περισσότερα</a>
 							</div>
 						</div>
 						<!-- End Product -->
@@ -149,7 +336,7 @@
 <!-- Our Clients -->
 <div class="section">
   <div class="container">
-    <h2>Our Clients</h2>
+    <h2>Πελάτες</h2>
   <div class="clients-logo-wrapper text-center row">
     <div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><img src="{% static 'img/logos/jumbo-logo.png' %}" alt="Jumbo"></a></div>
 
@@ -157,5 +344,6 @@
 </div>
 </div>
 <!-- End Our Clients -->
-
+<!-- end lang en -->
+{% endif %}
 {% endblock content %}
