@@ -1,6 +1,55 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
+{% if LANGUAGE_CODE == 'en' %}
+<!-- en -->
+<div class="section section-breadcrumbs">
+<div class="container">
+ <div class="row">
+   <div class="col-md-12">
+      <h1>Services </h1>
+   </div>
+ </div>
+</div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>{{page.title_en}}</h2>
+        <p>
+        {{page.body_en|safe}}
+        </p>
+      </div>
+      <div class="col-md-6">
+        <div class="portfolio-item">
+              <div class="portfolio-image">
+                <a href="#">
+                  <img src="/media/{{ page.image }}" alt="{{page.title_en}}">
+                </a>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Press Coverage -->
+<!-- Call to Action Bar -->
+<div class="section section-white">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="calltoaction-wrapper">
+        <h3>For compact Solutions for Air Conditioning, Cooling & Heating</h3> <a href="http://climaristotehniki.gr/contact/" class="btn btn-orange">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- End Call to Action Bar -->
+<!-- end en -->
+{% else %}
+<!-- el -->
 <div class="section section-breadcrumbs">
 <div class="container">
  <div class="row">
@@ -45,4 +94,5 @@
 </div>
 </div>
 <!-- End Call to Action Bar -->
+{% endif %}
 {% endblock content %}
