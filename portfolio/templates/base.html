@@ -247,7 +247,35 @@
 						</p>
 				</div>
 				<div class="col-footer col-md-2 col-xs-6">
-					{% category_list pages_tags  %}
+					{% if LANGUAGE_CODE == 'en' %}
+					<h3>Our Products</h3>
+					<ul class="no-list-style">
+					  {% for category in footer_categories %}
+					  {% if category.products.all %}
+					  <li><a href="#" class=""></a>
+					    <a href="{% url 'productlist_by_category' category_slug=category.slug %}">
+					    {{ category.name_en }}
+					    </a>
+					  </li>
+					  {% endif %}
+					  {% endfor %}
+					</ul>
+					{% else %}
+					<h3>Τα Προιοντα Μας</h3>
+					<ul class="no-list-style">
+						{% for category in footer_categories %}
+						{% if category.products.all %}
+						<li><a href="#" class=""></a>
+							<a href="{% url 'productlist_by_category' category_slug=category.slug %}">
+							{{ category.name }}
+							</a>
+						</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+
+					{% endif %}
+					</ul>
 				</div>
 			</div>
 			<div class="row">

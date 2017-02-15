@@ -1,6 +1,6 @@
 
 from portfolio.models import Project
-from products.models import Product
+from products.models import Product, Category
 
 def show_fp_projects(request):
     fp_projects = Project.objects.all()[:3]
@@ -12,6 +12,9 @@ def show_fp_projects(request):
 
 def show_fp_products(request):
     fp_products = Product.objects.all()[:4]
+    footer_categories = Category.objects.all()[:4]
+
     return {
         'fp_products': fp_products,
+        'footer_categories': footer_categories,
     }
