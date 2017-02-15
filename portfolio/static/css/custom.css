@@ -41,6 +41,7 @@
     }
 
     /* Change background color of links on hover */
+    ul.topnav li.has-submenu ul.services li:hover, ul.topnav li.has-submenu ul.services li a:hover {background-color: #fff; color:#555;}
     ul.topnav li a:hover, ul.topnav li:hover {background-color: #555; color:#fff;}
 
     /* Hide the list item that contains the link that should open and close the topnav on small screens */
